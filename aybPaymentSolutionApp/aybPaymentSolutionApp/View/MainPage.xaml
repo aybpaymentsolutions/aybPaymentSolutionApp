@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:aybPaymentSolutionApp.ViewModel"
+             x:Class="aybPaymentSolutionApp.MainPage">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="blueButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#1E73BE" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="8" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Opacity" Value="0.7" />
+            </Style>
+            <Style x:Key="lblPin" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Opacity" Value="0.6" />
+                <Setter Property="TextColor" Value="Silver" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Image x:Name="logoCmr" Margin="0,20,0,0" WidthRequest="120" HeightRequest="100"></Image>
+        <Label x:Name="lblPin" HorizontalOptions="Center" Margin="100,20,100,0" WidthRequest="90" HeightRequest="35"
+               Style="{StaticResource lblPin}"></Label>
+        <Entry x:Name="txtPin" FontSize="Large" IsVisible="False" Text="{Binding pinCode}"></Entry>
+
+        <Grid RowSpacing="3" ColumnSpacing="3" Margin="50,30,50,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"></RowDefinition>
+                <RowDefinition Height="65"></RowDefinition>
+                <RowDefinition Height="65"></RowDefinition>
+                <RowDefinition Height="65"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="1" Grid.Row="0" Grid.Column="0" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="2" Grid.Row="0" Grid.Column="1" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="3" Grid.Row="0" Grid.Column="2" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="4" Grid.Row="1" Grid.Column="0" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="5" Grid.Row="1" Grid.Column="1" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="6" Grid.Row="1" Grid.Column="2" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="7" Grid.Row="2" Grid.Column="0" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="8" Grid.Row="2" Grid.Column="1" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="9" Grid.Row="2" Grid.Column="2" Style="{StaticResource blueButton}" Clicked="digitCode"></Button>
+            <Button Text="CLEAR" Grid.Row="3" Grid.Column="0" Style="{StaticResource blueButton}" Clicked="digitCode" FontSize="Small"></Button>
+            <Button Text="0" Grid.Row="3" Grid.Column="1" Style="{StaticResource blueButton}"  Clicked="digitCode"></Button>
+            <Button Text="ENTER" Grid.Row="3" Grid.Column="2" Style="{StaticResource blueButton}" Clicked="digitCode" FontSize="Small"></Button>
+
+        </Grid>
+
+        <StackLayout>
+            <Grid ColumnSpacing="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Image Source="logo.png"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End"
+                       WidthRequest="90"
+                   />
+
+                <Label Text="" 
+                       Grid.Column="1"
+                       VerticalOptions="End"
+                       Opacity="0.5"
+                       x:Name="lblLicence"
+                       HorizontalOptions="Start"
+                       TextColor="White"></Label>
+            </Grid>
+        </StackLayout>
+        
+
+
+
+
+        </StackLayout>
+
+</ContentPage>
