@@ -55,16 +55,6 @@ namespace aybPaymentSolutionApp
                     this.lblPin.Text = "";
                     DisplayAlert("Info", "User doesn't exist or wrong pin", "Try again");
                 }
-                else if (consumed.ResponseCode == null || consumed.ResponseCode == "001")
-                {
-                    if (consumeSqlite(this.txtPin.Text, 0) == true)
-                    {
-                        Navigation.PushAsync(new MenuPrincipal(), true);
-                    } else
-                    {
-                        DisplayAlert("Info", "User doesn't exist or wrong pin", "Try again");
-                    }
-                }
             } else
             {
                 this.txtPin.Text += txtBtn;
@@ -82,17 +72,36 @@ namespace aybPaymentSolutionApp
 
         public LoginResponse consumeApi(string pincode)
         {
-            Task<LoginResponse> task = Task.Run<LoginResponse>(async () => await doLogin(iddevice, pincode));
-            var saved = "";
+            var objUserResponse = new LoginResponse();
 
-            if (task.Result.ResponseCode == "000")
+            if (App.isConnected)
             {
-                bool exist = consumeSqlite(pincode, task.Result.InfoUser.userID);
-                Task<int> saveRegister = Task.Run(async () => await saveSqlite(task.Result.InfoUser, exist));
-                saved = saveRegister.Result.ToString();
+                Task<LoginResponse> task = Task.Run<LoginResponse>(async () => await doLogin(iddevice, pincode));
+                if (task.Result.ResponseCode == "000")
+                {
+                    bool exist = consumeSqlite(pincode, task.Result.InfoUser.userID);
+                    Task<int> saveRegister = Task.Run(async () => await saveSqlite(task.Result.InfoUser, exist));
+                }
+                objUserResponse = task.Result;
+
+            } else
+            {
+                LoginResponse objResponse = new LoginResponse();
+                bool exist = consumeSqlite(pincode, 0);
+                if (exist)
+                {
+                    objResponse.ResponseCode = "000";
+                    objResponse.InfoUser = objUser;
+
+                } else
+                {
+                    objResponse.ResponseCode = "002";
+                }
+                objUserResponse = objResponse;
+
             }
 
-            return task.Result;
+            return objUserResponse;
         }
 
 

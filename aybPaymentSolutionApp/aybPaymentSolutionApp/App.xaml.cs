@@ -1,5 +1,6 @@
 using aybPaymentSolutionApp.Data;
 using aybPaymentSolutionApp.Services;
+using Plugin.Connectivity;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,6 +23,8 @@ namespace aybPaymentSolutionApp
             }
         }
 
+        public static bool isConnected { get; set; }
+
 		public App ()
 		{
 			InitializeComponent();
@@ -31,8 +34,9 @@ namespace aybPaymentSolutionApp
         }
 
 		protected override void OnStart ()
-		{   
+		{
             // Handle when your app starts
+            isConnected = CrossConnectivity.Current.IsConnected;
         }
 
 		protected override void OnSleep ()
