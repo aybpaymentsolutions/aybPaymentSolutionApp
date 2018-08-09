@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:aybPaymentSolutionApp.Behaviors;"
              x:Class="aybPaymentSolutionApp.View.ListUsers"
              Title="Users"
              >
@@ -15,16 +14,16 @@
 
         <StackLayout>
 
-            <Grid BackgroundColor="Silver" HeightRequest="30">
+            <Grid BackgroundColor="#1E73BE" HeightRequest="30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="Name" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-                <Label Text="Access Code" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-                <Label Text="Status" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label Text="Name" Grid.Column="0" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label Text="Access Code" Grid.Column="1" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label Text="Status" Grid.Column="2" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"></Label>
 
             </Grid>
 

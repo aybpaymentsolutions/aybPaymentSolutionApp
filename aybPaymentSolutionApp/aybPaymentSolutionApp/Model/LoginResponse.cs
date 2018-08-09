@@ -44,5 +44,8 @@ namespace aybPaymentSolutionApp.Model
 
         [JsonProperty("status")]
         public string Status { get; set; }
+
+        [JsonProperty("storename")]
+        public string StoreName { get; set; }
     }
 }

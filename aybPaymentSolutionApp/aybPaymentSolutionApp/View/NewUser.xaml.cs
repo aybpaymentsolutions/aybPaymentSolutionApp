@@ -1,4 +1,5 @@
-﻿using aybPaymentSolutionApp.Model;
+﻿using Android.Views;
+using aybPaymentSolutionApp.Model;
 using aybPaymentSolutionApp.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -25,11 +26,12 @@ namespace aybPaymentSolutionApp.View
         {
             base.OnAppearing();
 
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Silver;
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
-            this.Title = "Prueba";
+            this.Title = Application.Current.Properties["storeName"].ToString();
 
         }
+
+        
 
         private async void Button_Clicked(object sender, EventArgs e)
         {

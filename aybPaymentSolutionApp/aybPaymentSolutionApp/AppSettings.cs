@@ -17,7 +17,7 @@ namespace aybPaymentSolutionApp
 
         public void doLogin(InfoUser user, INavigation nav)
         {
-            Application.Current.Properties["storeName"] = "nikhil@msdn.com";
+            Application.Current.Properties["storeName"] = user.StoreName;
             Application.Current.Properties["userName"] = user.Fname;
             NavigationPage newNP = new NavigationPage(new MenuPrincipal());
             App.Current.MainPage = newNP;

@@ -25,8 +25,7 @@ namespace aybPaymentSolutionApp.View
             base.OnAppearing();
             NavigationPage.SetHasBackButton(this, false);
 
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#1E73BE");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
 
             if (this.ToolbarItems.Count == 0)
             {

@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
              x:Class="aybPaymentSolutionApp.View.NewUser"
-             NavigationPage.TitleIcon="icon.png"
              NavigationPage.HasBackButton="False">
 
 
@@ -11,10 +10,12 @@
         <ResourceDictionary>
             <Style TargetType="Label">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="12"></Setter>
             </Style>
             <Style TargetType="Label" x:Key="lblExpand">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="12"></Setter>
             </Style>
             <Style TargetType="expandable:ExpandableView">
                 <Style.Triggers>
@@ -24,6 +25,10 @@
                         
                     </Trigger>
                 </Style.Triggers>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalTextAlignment" Value="End"></Setter>
+                <Setter Property="FontSize" Value="12"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -59,7 +64,7 @@
                                     </Grid.RowDefinitions>
 
                                     <Label Text="First Name:" Grid.Row="0" Grid.Column="0"></Label>
-                                    <Entry Text="{Binding userData.PersonalInfo.Fname}" Grid.Row="0" Grid.Column="1"></Entry>
+                                    <Entry Text="{Binding userData.PersonalInfo.Fname}" HorizontalTextAlignment="End" Grid.Row="0" Grid.Column="1"></Entry>
 
                                     <Label Text="Last Name:" Grid.Row="1" Grid.Column="0"></Label>
                                     <Entry Text="{Binding userData.PersonalInfo.Lname}" Grid.Row="1" Grid.Column="1"></Entry>

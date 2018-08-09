@@ -4,7 +4,19 @@
              x:Class="aybPaymentSolutionApp.App">
 	<Application.Resources>
         <ResourceDictionary>
-            <x:String x:Key="wapiUrl">http://96.231.33.87:8589</x:String>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto" />
+                <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontFamily" Value="Roboto-Bold.ttf#Roboto-Bold" />
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto" />
+            </Style>
         </ResourceDictionary>
 	</Application.Resources>
 </Application>
