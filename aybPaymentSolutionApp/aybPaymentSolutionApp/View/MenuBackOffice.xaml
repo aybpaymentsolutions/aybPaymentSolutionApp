@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aybPaymentSolutionApp.View.MenuBackOffice">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="blueButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#f7f9ff" />
+                <Setter Property="TextColor" Value="#1E73BE" />
+                <Setter Property="BorderRadius" Value="8" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Opacity" Value="0.9" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Image x:Name="logoCmr" Margin="0,20,0,0" WidthRequest="100" HeightRequest="100"></Image>
+
+            <Grid RowSpacing="2" ColumnSpacing="2" Margin="30,50,30,10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="110"></RowDefinition>
+                    <RowDefinition Height="110"></RowDefinition>
+                    <RowDefinition Height="110"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="General Information"
+                        Image="settings.png" 
+                        ContentLayout="Top"
+                        FontSize="9"
+                        Grid.Row="0" Grid.Column="0" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Printers" 
+                        Image="printer.png" 
+                        ContentLayout="Top"
+                        Grid.Row="0" Grid.Column="1" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Cash Drawer" 
+                        Image="cashdrawer.png" 
+                        FontSize="9"
+                        ContentLayout="Top"
+                        Grid.Row="0" Grid.Column="2" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Employees" 
+                        Image="employee.png" 
+                        ContentLayout="Top"
+                        Grid.Row="1" Grid.Column="0" Style="{StaticResource blueButton}" Command="{Binding RedirectCommand}" CommandParameter="EM"></Button>
+                <Button Text="Card Reader"
+                        Image="pos.png" 
+                        FontSize="9"
+                        ContentLayout="Top"
+                        Grid.Row="1" Grid.Column="1" Style="{StaticResource blueButton}"></Button>
+                <Button Text="PoliDisplay" 
+                        Image="display.png" 
+                        ContentLayout="Top"
+                        Grid.Row="1" Grid.Column="2" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Station Settings" 
+                        Image="maps.png" 
+                        FontSize="9"
+                        ContentLayout="Top"
+                        Grid.Row="2" Grid.Column="0" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Menu" 
+                        Image="menu.png" 
+                        ContentLayout="Top"
+                        Grid.Row="2" Grid.Column="1" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Reports" 
+                        Image="reports.png" 
+                        ContentLayout="Top"
+                        Grid.Row="2" Grid.Column="2" Style="{StaticResource blueButton}"></Button>
+
+            </Grid>
+
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

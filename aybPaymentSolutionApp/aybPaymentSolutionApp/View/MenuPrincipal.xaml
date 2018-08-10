@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aybPaymentSolutionApp.View.MenuPrincipal">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="blueButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#f7f9ff" />
+                <Setter Property="TextColor" Value="#1E73BE" />
+                <Setter Property="BorderRadius" Value="8" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Opacity" Value="0.9" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Image x:Name="logoCmr" Margin="0,20,0,0" WidthRequest="100" HeightRequest="100"></Image>
+
+            <Grid RowSpacing="2" ColumnSpacing="2" Margin="30,50,30,10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="110"></RowDefinition>
+                    <RowDefinition Height="110"></RowDefinition>
+                    <RowDefinition Height="110"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Register" 
+                        Image="cashregister.png" 
+                        ContentLayout="Top"
+                        Grid.Row="0" Grid.Column="0" Style="{StaticResource blueButton}" Command="{Binding RedirectCommand}" CommandParameter="Reg" ></Button>
+                <Button Text="Drops and Payouts"
+                        Image="payouts.png" 
+                        FontSize="9"
+                        ContentLayout="Top"
+                        WidthRequest="110"
+                        Grid.Row="0" Grid.Column="1" Style="{StaticResource blueButton}"></Button>
+                <Button Text="No Sale" 
+                        Image="cashregister.png" 
+                        ContentLayout="Top"
+                        Grid.Row="0" Grid.Column="2" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Cashier In/Out"
+                        Image="cashregister.png" 
+                        ContentLayout="Top"
+                        FontSize="9"
+                        Grid.Row="1" Grid.Column="0" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Clock In/Out" 
+                        Image="clock.png" 
+                        ContentLayout="Top"
+                        Grid.Row="1" Grid.Column="1" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Reports" 
+                        Image="reports.png" 
+                        ContentLayout="Top"
+                        Grid.Row="1" Grid.Column="2" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Support" 
+                        Image="support.png" 
+                        ContentLayout="Top"
+                        Grid.Row="2" Grid.Column="0" Style="{StaticResource blueButton}"></Button>
+                <Button Text="Back Office" 
+                        Image="settings.png" 
+                        ContentLayout="Top"
+                        Grid.Row="2" Grid.Column="1" Style="{StaticResource blueButton}" Command="{Binding RedirectCommand}" CommandParameter="BO"></Button>
+                <Button Text="Exit" 
+                        Image="exit.png" 
+                        ContentLayout="Top"
+                        Grid.Row="2" Grid.Column="2" Style="{StaticResource blueButton}" Command="{Binding RedirectCommand}" CommandParameter="EX"></Button>
+
+            </Grid>
+            
+            
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

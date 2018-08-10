@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
+             x:Class="aybPaymentSolutionApp.View.AccordionPrb">
+    <ContentPage.Content>
+
+        <StackLayout>
+        
+            <ScrollView>
+
+                <expandable:ExpandableView>
+                    <expandable:ExpandableView.PrimaryView>
+                        <StackLayout HeightRequest="30" BackgroundColor="Blue" Padding="10,0,10,0">
+                            <Label Text="> Personal Information"
+                           TextColor="White"
+                           VerticalOptions="CenterAndExpand"
+                       ></Label>
+                        </StackLayout>
+                    </expandable:ExpandableView.PrimaryView>
+                    <expandable:ExpandableView.SecondaryViewTemplate>
+                        <DataTemplate>
+
+                            <Grid Margin="10,10,10,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="First Name:" Grid.Row="0" Grid.Column="0"></Label>
+                                <Entry Text="{Binding userData.PersonalInfo.Fname}" Grid.Row="0" Grid.Column="1"></Entry>
+
+                                <Label Text="Last Name:" Grid.Row="1" Grid.Column="0"></Label>
+                                <Entry Text="{Binding userData.PersonalInfo.Lname}" Grid.Row="1" Grid.Column="1"></Entry>
+
+                                <Label Text="Status:" Grid.Row="2" Grid.Column="0"></Label>
+                                <Picker ItemsSource="{Binding status}" SelectedItem="{Binding userData.PersonalInfo.Status}" Grid.Row="2" Grid.Column="1" />
+
+                                <Label Text="Access Code:" Grid.Row="3" Grid.Column="0"></Label>
+                                <Entry Keyboard="Numeric" Text="{Binding userData.PersonalInfo.PinCode}" Grid.Row="3" Grid.Column="1"></Entry>
+                                
+                            </Grid>
+
+                        </DataTemplate>
+                    </expandable:ExpandableView.SecondaryViewTemplate>
+                </expandable:ExpandableView>
+
+            </ScrollView>
+
+            <ScrollView>
+
+
+                <expandable:ExpandableView>
+                    <expandable:ExpandableView.PrimaryView>
+                        <StackLayout HeightRequest="30" BackgroundColor="Blue" Padding="10,0,10,0">
+                            <Label Text="> Salary info"
+                           TextColor="White"
+                           VerticalOptions="CenterAndExpand"
+                       ></Label>
+                        </StackLayout>
+                    </expandable:ExpandableView.PrimaryView>
+                    <expandable:ExpandableView.SecondaryViewTemplate>
+                        <DataTemplate>
+
+                            <Grid Margin="10,10,10,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="Status:" Grid.Row="0" Grid.Column="0"></Label>
+                                <Picker Title="Select a pay method" Margin="10,0,10,0" ItemsSource="{Binding salary}" SelectedIndex="{Binding userData.SalaryInfo.HourlyRate}"
+                                        Grid.Row="0" Grid.Column="1"/>
+
+                                <Label Text="Pay Rate:" Grid.Row="1" Grid.Column="0"></Label>
+                                <Entry Keyboard="Numeric" Text="{Binding userData.SalaryInfo.PayRate}" Grid.Row="1" Grid.Column="1"></Entry>
+
+                            </Grid>
+                            
+                            
+
+                        </DataTemplate>
+                    </expandable:ExpandableView.SecondaryViewTemplate>
+                </expandable:ExpandableView>
+
+
+
+            </ScrollView>
+
+            <ScrollView>
+
+                <expandable:ExpandableView>
+                    <expandable:ExpandableView.PrimaryView>
+                        <StackLayout HeightRequest="30" BackgroundColor="Blue" Padding="10,0,10,0">
+                            <Label Text="> Contacts"
+                           TextColor="White"
+                           VerticalOptions="CenterAndExpand"
+                       ></Label>
+                        </StackLayout>
+                    </expandable:ExpandableView.PrimaryView>
+                    <expandable:ExpandableView.SecondaryViewTemplate>
+                        <DataTemplate>
+
+
+                            <Grid Margin="10,10,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="E-mail:" Grid.Row="0" Grid.Column="0"></Label>
+                <Entry Text="{Binding userData.ContactInfo.Email}" Grid.Row="0" Grid.Column="1" />
+
+                <Label Text="Phone:" Grid.Row="1" Grid.Column="0"></Label>
+                <Entry Keyboard="Numeric" Text="{Binding userData.ContactInfo.Phone}" Grid.Row="1" Grid.Column="1" />
+
+                <Label Text="Address 1:" Grid.Row="2" Grid.Column="0"></Label>
+                <Entry Text="{Binding userData.ContactInfo.Street}" Grid.Row="2" Grid.Column="1" />
+
+                <Label Text="Address 2:" Grid.Row="3" Grid.Column="0"></Label>
+                <Entry Text="{Binding userData.ContactInfo.Complementary}" Grid.Row="3" Grid.Column="1" />
+
+                <Label Text="City:" Grid.Row="4" Grid.Column="0"></Label>
+                <Entry Text="{Binding userData.ContactInfo.City}" Grid.Row="4" Grid.Column="1" />
+
+                <Label Text="State:" Grid.Row="5" Grid.Column="0"></Label>
+                <Entry Text="{Binding userData.ContactInfo.State}" Grid.Row="5" Grid.Column="1" />
+
+                <Label Text="Country:" Grid.Row="6" Grid.Column="0"></Label>
+                <Entry Text="{Binding userData.ContactInfo.Country}" Grid.Row="6" Grid.Column="1" />
+
+                <Label Text="Zip:" Grid.Row="7" Grid.Column="0"></Label>
+                <Entry Text="{Binding userData.ContactInfo.Zip}" Grid.Row="7" Grid.Column="1" />
+
+            </Grid>
+
+
+                        </DataTemplate>
+                    </expandable:ExpandableView.SecondaryViewTemplate>
+                </expandable:ExpandableView>
+
+            </ScrollView>
+
+
+            <Grid Margin="10,10,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Text="First Name:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry Text="{Binding userData.PersonalInfo.Fname}" Grid.Row="0" Grid.Column="1"></Entry>
+
+                <Label Text="Last Name:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry Text="{Binding userData.PersonalInfo.Lname}" Grid.Row="1" Grid.Column="1"></Entry>
+
+                <Label Text="Status:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Picker ItemsSource="{Binding status}" SelectedItem="{Binding userData.PersonalInfo.Status}" Grid.Row="2" Grid.Column="1" />
+
+                <Label Text="Access Code:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry Keyboard="Numeric" Text="{Binding userData.PersonalInfo.PinCode}" Grid.Row="3" Grid.Column="1"></Entry>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
