@@ -2,12 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
+             xmlns:effects="clr-namespace:aybPaymentSolutionApp.Controllers"
              x:Class="aybPaymentSolutionApp.View.NewUser"
              NavigationPage.HasBackButton="False">
 
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style TargetType="StackLayout" x:Key="stackExpand">
+                <Setter Property="Padding" Value="10,0,10,0"></Setter>
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="BackgroundColor" Value="#3796E0"></Setter>
+            </Style>
             <Style TargetType="Label">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="12"></Setter>
@@ -27,7 +33,9 @@
                 </Style.Triggers>
             </Style>
             <Style TargetType="Entry">
-                <Setter Property="HorizontalTextAlignment" Value="End"></Setter>
+                <Setter Property="FontSize" Value="12"></Setter>
+            </Style>
+            <Style TargetType="Picker">
                 <Setter Property="FontSize" Value="12"></Setter>
             </Style>
         </ResourceDictionary>
@@ -39,12 +47,12 @@
 
             <StackLayout>
 
-                <StackLayout>
+                <StackLayout x:Name="stackPersonal">
 
                     <expandable:ExpandableView IsExpanded="True">
                         <expandable:ExpandableView.PrimaryView>
-                            <StackLayout HeightRequest="30" BackgroundColor="#1E73BE" Padding="10,0,10,0">
-                                <Label Text="Personal Information" Style="{StaticResource lblExpand}"></Label>
+                            <StackLayout Style="{StaticResource stackExpand}">
+                                <Label Text="PERSONAL INFORMATION" Style="{StaticResource lblExpand}"></Label>
                             </StackLayout>
                         </expandable:ExpandableView.PrimaryView>
                         <expandable:ExpandableView.SecondaryViewTemplate>
@@ -64,16 +72,23 @@
                                     </Grid.RowDefinitions>
 
                                     <Label Text="First Name:" Grid.Row="0" Grid.Column="0"></Label>
-                                    <Entry Text="{Binding userData.PersonalInfo.Fname}" HorizontalTextAlignment="End" Grid.Row="0" Grid.Column="1"></Entry>
+                                    <Entry x:Name="txtFname" 
+                                           Text="{Binding userData.PersonalInfo.Fname}" 
+                                           Grid.Row="0" Grid.Column="1"
+                                           ReturnType="Next" />
 
                                     <Label Text="Last Name:" Grid.Row="1" Grid.Column="0"></Label>
-                                    <Entry Text="{Binding userData.PersonalInfo.Lname}" Grid.Row="1" Grid.Column="1"></Entry>
+                                    <Entry x:Name="txtLname" 
+                                           Text="{Binding userData.PersonalInfo.Lname}" 
+                                           Grid.Row="1" Grid.Column="1"
+                                           ReturnType="Next"
+                                           ></Entry>
 
                                     <Label Text="Status:" Grid.Row="2" Grid.Column="0"></Label>
-                                    <Picker ItemsSource="{Binding status}" SelectedItem="{Binding userData.PersonalInfo.Status}" Grid.Row="2" Grid.Column="1" />
+                                    <Picker x:Name="pickStatus" ItemsSource="{Binding status}" SelectedItem="{Binding userData.PersonalInfo.Status}" Grid.Row="2" Grid.Column="1" />
 
                                     <Label Text="Access Code:" Grid.Row="3" Grid.Column="0"></Label>
-                                    <Entry Keyboard="Numeric" Text="{Binding userData.PersonalInfo.PinCode}" Grid.Row="3" Grid.Column="1"></Entry>
+                                    <Entry x:Name="txtPin" Keyboard="Numeric" Text="{Binding userData.PersonalInfo.PinCode}" Grid.Row="3" Grid.Column="1"></Entry>
 
                                 </Grid>
 
@@ -88,8 +103,8 @@
 
                     <expandable:ExpandableView>
                         <expandable:ExpandableView.PrimaryView>
-                            <StackLayout HeightRequest="30" BackgroundColor="#1E73BE" Padding="10,0,10,0">
-                                <Label Text="Salary info" Style="{StaticResource lblExpand}"></Label>
+                            <StackLayout Style="{StaticResource stackExpand}">
+                                <Label Text="SALARY INFO" Style="{StaticResource lblExpand}"></Label>
                             </StackLayout>
                         </expandable:ExpandableView.PrimaryView>
                         <expandable:ExpandableView.SecondaryViewTemplate>
@@ -127,8 +142,8 @@
 
                     <expandable:ExpandableView>
                         <expandable:ExpandableView.PrimaryView>
-                            <StackLayout HeightRequest="30" BackgroundColor="#1E73BE" Padding="10,0,10,0">
-                                <Label Text="Contacts" Style="{StaticResource lblExpand}"></Label>
+                            <StackLayout Style="{StaticResource stackExpand}">
+                                <Label Text="CONTACTS" Style="{StaticResource lblExpand}"></Label>
                             </StackLayout>
                         </expandable:ExpandableView.PrimaryView>
                         <expandable:ExpandableView.SecondaryViewTemplate>
@@ -178,8 +193,8 @@
 
                     <expandable:ExpandableView>
                         <expandable:ExpandableView.PrimaryView>
-                            <StackLayout HeightRequest="30" BackgroundColor="#1E73BE" Padding="10,0,10,0">
-                                <Label Text="Permission" Style="{StaticResource lblExpand}"></Label>
+                            <StackLayout Style="{StaticResource stackExpand}">
+                                <Label Text="PERMISSION" Style="{StaticResource lblExpand}"></Label>
                             </StackLayout>
                         </expandable:ExpandableView.PrimaryView>
                         <expandable:ExpandableView.SecondaryViewTemplate>
@@ -195,8 +210,8 @@
                                         <RowDefinition></RowDefinition>
                                     </Grid.RowDefinitions>
 
-                                    <Label Text="Preset:" Grid.Row="2" Grid.Column="0"></Label>
-                                    <Picker Title="Select a preset" ItemsSource="{Binding permissions}" Grid.Row="2" Grid.Column="1" />
+                                    <Label Text="Preset:" Grid.Row="0" Grid.Column="0"></Label>
+                                    <Picker Title="Select a preset" ItemsSource="{Binding permissions}" ItemDisplayBinding="{Binding ProfileText}" SelectedItem="{Binding ProfileId}" SelectedIndexChanged="Picker_SelectedIndexChanged" Grid.Row="0" Grid.Column="1" />
                                 </Grid>
 
                             </DataTemplate>
@@ -205,7 +220,9 @@
 
                 </StackLayout>
 
-                <Button Text="Save" Command="{Binding SaveUserCommand}"></Button>
+                <StackLayout x:Name="stackTbOptions"></StackLayout>
+
+                <Button Text="Save" BackgroundColor="#2069A1" TextColor="White" Command="{Binding SaveUserCommand}"></Button>
 
             </StackLayout>
 

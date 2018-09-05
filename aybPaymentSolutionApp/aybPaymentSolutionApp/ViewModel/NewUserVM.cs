@@ -22,12 +22,14 @@ namespace aybPaymentSolutionApp.ViewModel
                 OnPropertyChanged();
             }
         }
+
         public Command SaveUserCommand { get; set; }
+        public Command getOptions { get; set; }
 
         List<string> listStatus = new List<string>
         {
-            "Activate",
-            "Inactivate"
+            "Active",
+            "Inactive"
         };
 
         List<string> listSalary = new List<string>
@@ -36,16 +38,9 @@ namespace aybPaymentSolutionApp.ViewModel
             "Salaried"
         };
 
-        List<string> listPermission = new List<string>
-        {
-            "Manager",
-            "Cashier",
-            "Custom"
-        };
-
         public List<string> status => listStatus;
         public List<string> salary => listSalary;
-        public List<string> permissions => listPermission;
+        public List<Profile> permissions { get; set; }
 
         Page pageView;
         private UserData _userData;
@@ -60,6 +55,10 @@ namespace aybPaymentSolutionApp.ViewModel
             userData.PersonalInfo = personalObj;
             userData.SalaryInfo = salaryObj;
             pageView = page;
+
+            UpdateUserModel updateUserModel = new UpdateUserModel();
+            permissions = updateUserModel.getPermissions();
+
             SaveUserCommand = new Command(async () => await SaveUser());
         }
 
@@ -114,6 +113,8 @@ namespace aybPaymentSolutionApp.ViewModel
 
             afterHideCallback?.Invoke();
         }
+
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;

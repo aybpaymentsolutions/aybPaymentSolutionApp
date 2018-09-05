@@ -16,11 +16,15 @@ namespace aybPaymentSolutionApp.View
 	public partial class NewUser : ContentPage
 	{
 
+        public List<Option> listOptions { get; set; }
+
+
         public NewUser ()
 		{
 			InitializeComponent ();
             this.BindingContext = new NewUserVM(this);
-		}
+
+        }
 
         protected override void OnAppearing()
         {
@@ -53,6 +57,92 @@ namespace aybPaymentSolutionApp.View
                 buttonText);
 
             afterHideCallback?.Invoke();
+        }
+
+        private void NextMoves()
+        {
+
+            Entry entryFName = stackPersonal.FindByName<Entry>("txtFname");
+            Entry entryLName = stackPersonal.FindByName<Entry>("txtFname");
+
+            entryFName.Completed += (Object sender, EventArgs e) =>
+            {
+                entryLName.Focus();
+            };
+        }
+
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Picker pickPermission = (sender as Picker);
+            Profile currentProfile = (pickPermission.SelectedItem as Profile);
+
+            this.stackTbOptions.Children.Clear();
+
+            TableView tbOptions = new TableView()
+            {
+                Intent = TableIntent.Form
+            };
+
+            TableRoot tRoot = new TableRoot();
+
+            UpdateUserModel objUserModel = new UpdateUserModel();
+            List<Option> optionsList = objUserModel.getOptions(Int32.Parse(currentProfile.ProfileId.ToString()));
+
+
+            var grid = new Grid();
+            var rowCount = 0;
+
+
+            if (optionsList != null)
+            {
+                foreach (Option rowModule in optionsList)
+                {
+                    var lblModule = new Label()
+                    {
+                        FontAttributes = FontAttributes.Bold,
+                        Text = rowModule.ModuleName,
+                        TextColor = Color.Black
+                    };
+
+                    grid.Children.Add(lblModule, 0, rowCount);
+
+                    foreach (OptionsList rowOption in rowModule.OptionsList)
+                    {
+                        rowCount++;
+                        var lblOption = new Label()
+                        {
+                            Text = " - " + rowOption.OptionText,
+                            TextColor = Color.Black
+                        };
+
+                        grid.Children.Add(lblOption, 0, rowCount);
+                    }
+                }
+            }
+
+            var viewOptions = new ViewCell()
+            {
+                View = grid
+            };
+
+
+            var headerTemplate = new DataTemplate();
+            
+
+            ListView listvOptions = new ListView()
+            {
+                HasUnevenRows = true,
+                ItemTemplate = headerTemplate
+            };
+
+            this.stackTbOptions.Children.Add(listvOptions);
+
+            //DisplayAlert("Pruebita", currentProfile.ProfileId.ToString(), "OK");
+        }
+
+        public void buildForm()
+        {
+
         }
     }
 }

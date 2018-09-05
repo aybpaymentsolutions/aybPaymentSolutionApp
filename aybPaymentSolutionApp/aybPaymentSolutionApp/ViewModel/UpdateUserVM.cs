@@ -19,8 +19,8 @@ namespace aybPaymentSolutionApp.ViewModel
 
         List<string> listStatus = new List<string>
         {
-            "Activate",
-            "Inactivate"
+            "Active",
+            "Inactive"
         };
 
         List<string> listSalary = new List<string>
@@ -29,8 +29,16 @@ namespace aybPaymentSolutionApp.ViewModel
             "Salaried"
         };
 
+        List<string> listPermission = new List<string>
+        {
+            "Manager",
+            "Cashier",
+            "Custom"
+        };
+
         public List<string> status => listStatus;
         public List<string> salary => listSalary;
+        public List<Profile> permissions { get; set; }
         Page pageView;
 
 
@@ -40,6 +48,9 @@ namespace aybPaymentSolutionApp.ViewModel
             UpdateUserModel updateUserModel = new UpdateUserModel();
             userData = updateUserModel.getUserData(idUser);
             setSelectedStatus();
+
+            permissions = updateUserModel.getPermissions();
+
             SaveUserCommand = new Command(async () => await SaveUser());
 
         }
@@ -51,7 +62,7 @@ namespace aybPaymentSolutionApp.ViewModel
             userInfo.ResponseCode = "000";
             userInfo.ResponseMessage = "Save User";
 
-            if (userData.PersonalInfo.Status == "Activate")
+            if (userData.PersonalInfo.Status == "Active")
             {
                 userData.PersonalInfo.Status = "1";
             } else
@@ -82,10 +93,10 @@ namespace aybPaymentSolutionApp.ViewModel
         {
             if (userData.PersonalInfo.Status == "False")
             {
-                userData.PersonalInfo.Status = "Inactivate";
+                userData.PersonalInfo.Status = "Inactive";
             } else
             {
-                userData.PersonalInfo.Status = "Activate";
+                userData.PersonalInfo.Status = "Active";
             }
         }
 

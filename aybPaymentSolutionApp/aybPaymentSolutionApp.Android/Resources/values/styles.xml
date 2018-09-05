@@ -11,7 +11,7 @@
     <item name="windowActionBar">false</item>
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#C0C0C0</item>
+    <item name="colorPrimary">#F4F4F4</item>
     <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">#C0C0C0</item>
     <!-- colorAccent is used as the default value for colorControlActivated
@@ -26,7 +26,7 @@
     <item name="textAllCaps">false</item>
     <item name="android:textAllCaps">false</item>
     
-    <item name="android:actionBarSize">40dp</item>
+    <item name="android:actionBarSize">50dp</item>
     
   </style>
 

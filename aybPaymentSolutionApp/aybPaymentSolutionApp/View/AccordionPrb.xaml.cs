@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aybPaymentSolutionApp.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,12 @@ namespace aybPaymentSolutionApp.View
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void ListViewItem_Tabbed(object sender, ItemTappedEventArgs e)
+        {
+            var product = e.Item as ContentListExpandable;
+            var vm = BindingContext as MainListView;
+            vm?.ShoworHiddenProducts(product);
+        }
+    }
 }

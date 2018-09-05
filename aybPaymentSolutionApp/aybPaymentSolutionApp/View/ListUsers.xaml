@@ -5,20 +5,16 @@
              Title="Users"
              >
 
-    <ContentPage.ToolbarItems>
-        
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
 
 
         <StackLayout>
 
-            <Grid BackgroundColor="#1E73BE" HeightRequest="30">
+            <Grid BackgroundColor="#1E73BE" HeightRequest="40">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Name" Grid.Column="0" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"></Label>
@@ -42,8 +38,8 @@
                                 <Grid HeightRequest="30">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="70"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="{Binding Fname}" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>

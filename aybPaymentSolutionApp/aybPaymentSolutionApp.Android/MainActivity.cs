@@ -17,6 +17,8 @@ namespace aybPaymentSolutionApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
+
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);

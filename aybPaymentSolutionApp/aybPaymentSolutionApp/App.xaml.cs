@@ -27,6 +27,8 @@ namespace aybPaymentSolutionApp
 
 		public App ()
 		{
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
+
 			InitializeComponent();
 
             MainPage = new NavigationPage(new StartUp());

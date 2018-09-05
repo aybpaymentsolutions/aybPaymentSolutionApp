@@ -25,9 +25,7 @@ namespace aybPaymentSolutionApp.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#1E73BE");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+            
         }
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
