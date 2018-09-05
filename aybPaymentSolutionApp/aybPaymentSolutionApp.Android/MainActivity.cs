@@ -17,7 +17,7 @@ namespace aybPaymentSolutionApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjA5NjVAMzEzNjJlMzIyZTMwYWl5cWladDdKci9tQXJsOStPUy9nUDJucTE3SWZvbTBDWTRFUnFxU3BSST0=");
 
             base.OnCreate(bundle);
 
