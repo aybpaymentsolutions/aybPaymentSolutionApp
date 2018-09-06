@@ -1,4 +1,4 @@
-﻿using Android.Views;
+﻿//using Android.Views;
 using aybPaymentSolutionApp.Model;
 using aybPaymentSolutionApp.ViewModel;
 using System;

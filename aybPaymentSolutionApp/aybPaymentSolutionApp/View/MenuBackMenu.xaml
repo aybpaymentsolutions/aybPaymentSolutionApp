@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aybPaymentSolutionApp.View.MenuBackMenu">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="blueButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#f7f9ff" />
+                <Setter Property="TextColor" Value="#1E73BE" />
+                <Setter Property="BorderRadius" Value="8" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Opacity" Value="0.9" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Image x:Name="logoCmr" Margin="0,20,0,0" WidthRequest="100" HeightRequest="100"></Image>
+
+            <Grid RowSpacing="1" Margin="15,25,15,5">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Categories"
+                        Image="settings.png"
+                        ContentLayout="Top"
+                        FontSize="10"
+                        Grid.Row="0" Grid.Column="0" Style="{StaticResource blueButton}" Command="{Binding RedirectCommand}" CommandParameter="RegCat"></Button>
+                <Button Text="Groups"
+                        Image="menu.png"
+                        ContentLayout="Top"
+                        FontSize="10"
+                        Grid.Row="0" Grid.Column="1" Style="{StaticResource blueButton}">
+                </Button>
+                <Button Text="Group Schedule"
+                        Image="clock.png"
+                        ContentLayout="Top"
+                        FontSize="10"
+                        Grid.Row="1" Grid.Column="0" Style="{StaticResource blueButton}">
+                </Button>
+                <Button Text="Items"
+                        Image="maps.png"
+                        ContentLayout="Top"
+                        FontSize="10"
+                        Grid.Row="1" Grid.Column="1" Style="{StaticResource blueButton}">
+                </Button>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

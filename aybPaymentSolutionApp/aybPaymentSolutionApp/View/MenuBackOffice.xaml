@@ -70,7 +70,7 @@
                 <Button Text="Menu" 
                         Image="menu.png" 
                         ContentLayout="Top"
-                        Grid.Row="2" Grid.Column="1" Style="{StaticResource blueButton}"></Button>
+                        Grid.Row="2" Grid.Column="1" Style="{StaticResource blueButton}" Command="{Binding RedirectCommand}" CommandParameter="MBM"></Button>
                 <Button Text="Reports" 
                         Image="reports.png" 
                         ContentLayout="Top"

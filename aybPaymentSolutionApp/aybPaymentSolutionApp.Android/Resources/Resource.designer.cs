@@ -26,6 +26,9 @@ namespace aybPaymentSolutionApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Syncfusion.ListView.XForms.Android.Resource.String.ApplicationName = global::aybPaymentSolutionApp.Droid.Resource.String.ApplicationName;
+			global::Syncfusion.ListView.XForms.Android.Resource.String.Hello = global::aybPaymentSolutionApp.Droid.Resource.String.Hello;
+			global::Syncfusion.ListView.XForms.Android.Resource.String.Load_More = global::aybPaymentSolutionApp.Droid.Resource.String.Load_More;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::aybPaymentSolutionApp.Droid.Resource.Attribute.actionBarSize;
 			global::XFGloss.Droid.Resource.Animation.abc_fade_in = global::aybPaymentSolutionApp.Droid.Resource.Animation.abc_fade_in;
 			global::XFGloss.Droid.Resource.Animation.abc_fade_out = global::aybPaymentSolutionApp.Droid.Resource.Animation.abc_fade_out;
@@ -716,13 +719,7 @@ namespace aybPaymentSolutionApp.Droid
 			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_material = global::aybPaymentSolutionApp.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::XFGloss.Droid.Resource.Drawable.abc_vector_test = global::aybPaymentSolutionApp.Droid.Resource.Drawable.abc_vector_test;
 			global::XFGloss.Droid.Resource.Drawable.avd_hide_password = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password;
-			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_1 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password_1;
-			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_2 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password_2;
-			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_3 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password_3;
 			global::XFGloss.Droid.Resource.Drawable.avd_show_password = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password;
-			global::XFGloss.Droid.Resource.Drawable.avd_show_password_1 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password_1;
-			global::XFGloss.Droid.Resource.Drawable.avd_show_password_2 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password_2;
-			global::XFGloss.Droid.Resource.Drawable.avd_show_password_3 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password_3;
 			global::XFGloss.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::aybPaymentSolutionApp.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::XFGloss.Droid.Resource.Drawable.design_fab_background = global::aybPaymentSolutionApp.Droid.Resource.Drawable.design_fab_background;
 			global::XFGloss.Droid.Resource.Drawable.design_ic_visibility = global::aybPaymentSolutionApp.Droid.Resource.Drawable.design_ic_visibility;
@@ -4435,26 +4432,8 @@ namespace aybPaymentSolutionApp.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020145
-			public const int avd_hide_password_1 = 2130837829;
-			
-			// aapt resource value: 0x7f020146
-			public const int avd_hide_password_2 = 2130837830;
-			
-			// aapt resource value: 0x7f020147
-			public const int avd_hide_password_3 = 2130837831;
-			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
-			
-			// aapt resource value: 0x7f020148
-			public const int avd_show_password_1 = 2130837832;
-			
-			// aapt resource value: 0x7f020149
-			public const int avd_show_password_2 = 2130837833;
-			
-			// aapt resource value: 0x7f02014a
-			public const int avd_show_password_3 = 2130837834;
 			
 			// aapt resource value: 0x7f020055
 			public const int btnbackground = 2130837589;
@@ -6120,6 +6099,15 @@ namespace aybPaymentSolutionApp.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f0a003d
+			public const int ApplicationName = 2131361853;
+			
+			// aapt resource value: 0x7f0a003c
+			public const int Hello = 2131361852;
+			
+			// aapt resource value: 0x7f0a003e
+			public const int Load_More = 2131361854;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int abc_action_bar_home_description = 2131361813;

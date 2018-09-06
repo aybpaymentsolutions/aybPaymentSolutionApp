@@ -26,6 +26,11 @@ namespace aybPaymentSolutionApp.ViewModel
             {
                 navigation.PushAsync(new ListUsers(), true);
             }
+            else if (tipo.ToString() == "MBM")
+            {
+                //Redirecciona hacia la pantalla del Menu para las opciones de Menus
+                navigation.PushAsync(new MenuBackMenu());
+            }
         }
 
     }
