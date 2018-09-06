@@ -1,5 +1,6 @@
 ﻿using aybPaymentSolutionApp;
 using aybPaymentSolutionApp.View;
+using aybPaymentSolutionApp.View.Orders;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +22,7 @@ namespace aybPaymentSolutionApp.ViewModel
         {
             if (tipo.ToString() == "Reg")
             {
-                navigation.PushAsync(new AccordionPrb(), true);
+                navigation.PushAsync(new Orders(), true);
             } else if (tipo.ToString() == "BO")
             {
                 navigation.PushAsync(new MenuBackOffice(), true);
