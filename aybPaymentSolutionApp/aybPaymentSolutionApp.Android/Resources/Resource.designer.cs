@@ -720,7 +720,13 @@ namespace aybPaymentSolutionApp.Droid
 			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_material = global::aybPaymentSolutionApp.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::XFGloss.Droid.Resource.Drawable.abc_vector_test = global::aybPaymentSolutionApp.Droid.Resource.Drawable.abc_vector_test;
 			global::XFGloss.Droid.Resource.Drawable.avd_hide_password = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password;
+			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_1 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password_1;
+			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_2 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password_2;
+			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_3 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_hide_password_3;
 			global::XFGloss.Droid.Resource.Drawable.avd_show_password = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password;
+			global::XFGloss.Droid.Resource.Drawable.avd_show_password_1 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password_1;
+			global::XFGloss.Droid.Resource.Drawable.avd_show_password_2 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password_2;
+			global::XFGloss.Droid.Resource.Drawable.avd_show_password_3 = global::aybPaymentSolutionApp.Droid.Resource.Drawable.avd_show_password_3;
 			global::XFGloss.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::aybPaymentSolutionApp.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::XFGloss.Droid.Resource.Drawable.design_fab_background = global::aybPaymentSolutionApp.Droid.Resource.Drawable.design_fab_background;
 			global::XFGloss.Droid.Resource.Drawable.design_ic_visibility = global::aybPaymentSolutionApp.Droid.Resource.Drawable.design_ic_visibility;

@@ -38,8 +38,8 @@
     <EmbeddedResource Update="View\MenuPrincipal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Menu\CategoriesMenuList.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <EmbeddedResource Update="View\Menu\ListCategories.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\NewUser.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

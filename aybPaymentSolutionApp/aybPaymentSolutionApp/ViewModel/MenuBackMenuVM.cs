@@ -24,7 +24,7 @@ namespace aybPaymentSolutionApp.ViewModel
             switch (opcionMenu.ToString())
             {
                 case "RegCat":
-                    navigation.PushModalAsync(new CategoriesMenuList());
+                    navigation.PushModalAsync(new ListCategories(), true);
                     break;
             }
 
