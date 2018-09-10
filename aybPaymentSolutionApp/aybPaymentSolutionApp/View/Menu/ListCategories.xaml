@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="aybPaymentSolutionApp.View.Menu.ListCategories">
+             x:Class="aybPaymentSolutionApp.View.Menu.ListCategories"
+             Title="Categories"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Priority="0" Order="Secondary" />
+        <ToolbarItem Text="Cancel" Priority="1" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
 
-            <Grid BackgroundColor="#1E73BE" HeightRequest="30">
+            <Grid BackgroundColor="#1E73BE" HeightRequest="40">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -34,16 +41,21 @@
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="{Binding MenuCategoryText}" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                    <Label Text="{Binding MenuCategoryInActive}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
 
                                 </Grid>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
+
+            <Button Text="Add Category"
+                        Image="settings.png"
+                        ContentLayout="Top"
+                        FontSize="10"
+                        Grid.Row="0" Grid.Column="0" Command="{Binding RedirectCommand}" CommandParameter="AddCat"></Button>
 
         </StackLayout>
     </ContentPage.Content>
-
 </ContentPage>

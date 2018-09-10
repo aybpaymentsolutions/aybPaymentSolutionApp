@@ -30,7 +30,7 @@ namespace aybPaymentSolutionApp.Model
         public string MenuCategoryText { get; set; }
 
         [JsonProperty("MenuCategoryInActive")]
-        public bool MenuCategoryInActive { get; set; }
+        public string MenuCategoryInActive { get; set; }
 
         [JsonProperty("StoreID")]
         public string StoreID { get; set; }
