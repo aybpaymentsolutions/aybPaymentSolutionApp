@@ -1,4 +1,5 @@
 ﻿using aybPaymentSolutionApp.Model;
+using aybPaymentSolutionApp.View.Menu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,14 @@ namespace aybPaymentSolutionApp.ViewModel
     {
         public List<InfoCategory> listCategory { get; set; }
         public Command ItemTappedCommand { get; set; }
-        private INavigation Navigation = null;
+        public Command RedirectCommand { get; set; }
+        public INavigation navigation = null;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ListCategoriesVM()
         {
+            RedirectCommand = new Command<string>(doRedirect);
             ListCategoryModel listCategoryModel = new ListCategoryModel();
             listCategory = listCategoryModel.GetCategories();
             ItemTappedCommand = new Command(async () => await NavigateToEditCategory());
@@ -26,12 +29,22 @@ namespace aybPaymentSolutionApp.ViewModel
 
         public async Task NavigateToEditCategory()
         {
-            await Navigation.PushAsync(new MainPage());
+            await navigation.PushAsync(new MainPage());
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void doRedirect(string opcion)
+        {
+            switch (opcion.ToString())
+            {
+                case "AddCat":
+                   // navigation.PushModalAsync(new NewCategory(), true);
+                    break;
+            }
         }
     }
 }

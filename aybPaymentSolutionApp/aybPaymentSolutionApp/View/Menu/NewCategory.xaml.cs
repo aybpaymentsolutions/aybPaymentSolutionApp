@@ -1,5 +1,4 @@
-﻿using aybPaymentSolutionApp.ViewModel;
-using Plugin.Connectivity;
+﻿using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace aybPaymentSolutionApp.View.Menu
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListCategories : ContentPage
+	public partial class NewCategory : ContentPage
 	{
-		public ListCategories ()
+		public NewCategory ()
 		{
 			InitializeComponent ();
-        }
-
+		}
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -49,8 +47,8 @@ namespace aybPaymentSolutionApp.View.Menu
                 this.ToolbarItems.Add(addcategoryitem);
             }
 
-            this.BindingContext = new ListCategoriesVM();
-            ((ListView)this.listCatMenu).SelectedItem = null;
+            //this.BindingContext = new ListCategoriesVM();
+            //((ListView)this.listCatMenu).SelectedItem = null;
         }
 
     }
