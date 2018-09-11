@@ -104,6 +104,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Bold.ttf" />
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
+    <AndroidAsset Include="Assets\aybOrdersIcons.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

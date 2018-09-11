@@ -16,5 +16,11 @@ namespace aybPaymentSolutionApp.View.Orders
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
+    }
 }
